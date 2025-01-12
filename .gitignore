@@ -44,7 +44,7 @@
 *.autosave
 
 # build directory
-build*/
+build/
 
 # libraries
 deploy/
