@@ -1,0 +1,8 @@
+F:/codespace/ClassSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-RelWithDebInfo/CMakeFiles/ClassSystem.dir
+F:/codespace/ClassSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-RelWithDebInfo/CMakeFiles/edit_cache.dir
+F:/codespace/ClassSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-RelWithDebInfo/CMakeFiles/rebuild_cache.dir
+F:/codespace/ClassSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-RelWithDebInfo/CMakeFiles/list_install_components.dir
+F:/codespace/ClassSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-RelWithDebInfo/CMakeFiles/install.dir
+F:/codespace/ClassSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-RelWithDebInfo/CMakeFiles/install/local.dir
+F:/codespace/ClassSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-RelWithDebInfo/CMakeFiles/ClassSystem_autogen_timestamp_deps.dir
+F:/codespace/ClassSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-RelWithDebInfo/CMakeFiles/ClassSystem_autogen.dir
