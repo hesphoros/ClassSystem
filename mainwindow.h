@@ -2,13 +2,15 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <ElaWindow.h>
+#include <ElaWidget.h>
 
-class MainWindow : public QMainWindow
+class MainWindow : public ElaWindow
 {
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
+    MainWindow(ElaWidget *parent = nullptr);
     ~MainWindow();
 };
 #endif // MAINWINDOW_H
