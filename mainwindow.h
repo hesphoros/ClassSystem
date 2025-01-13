@@ -7,6 +7,7 @@
 #include <ElaWidget.h>
 #include <ElaContentDialog.h>
 #include <ElaIcon.h>
+#include <QSystemTrayIcon>
 #include "aboutwindow.h"
 
 class ElaContentDialog;
@@ -27,7 +28,7 @@ private:
     ElaContentDialog* _closeDialog{nullptr};
     QString _aboutKey{""};
     QPixmap head;
-
+    QSystemTrayIcon* pSystemTray;
     AboutWindow *_aboutPage{nullptr};
 };
 #endif // MAINWINDOW_H

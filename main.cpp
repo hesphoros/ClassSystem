@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     ElaApplication::getInstance()->init();
-    ElaApplication::getInstance()->setIsEnableMica(true);
+    //ElaApplication::getInstance()->setIsEnableMica(true);
     MainWindow w;
 
 

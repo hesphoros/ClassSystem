@@ -28,7 +28,14 @@ MainWindow::~MainWindow() {}
 void MainWindow::initWindow(){
 
 
-
+    this->pSystemTray = new QSystemTrayIcon();
+    if(nullptr != pSystemTray){
+        //TODO:
+        pSystemTray->setIcon(QIcon(":/icon.png"));
+        pSystemTray->setToolTip("55555");
+        pSystemTray->show();
+    }
+    setWindowIcon(QIcon(":/icon.png"));
     this->head = QPixmap(":/headpic.jpg");
     this->setUserInfoCardTitle("ClassSystem");
     this->setUserInfoCardSubTitle("hesphoros@gmail.com");
