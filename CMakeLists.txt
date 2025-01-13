@@ -22,6 +22,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(ClassSystem
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+        include/ElaWidgetTools.qrc
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET ClassSystem APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
@@ -41,7 +42,13 @@ else()
     endif()
 endif()
 
-target_link_libraries(ClassSystem PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+include_directories(
+    include
+)
+
+target_link_libraries(ClassSystem PRIVATE Qt${QT_VERSION_MAJOR}::Widgets
+    ${CMAKE_CURRENT_SOURCE_DIR}/lib/ElaWidgetTools.lib
+)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
