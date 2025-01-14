@@ -44,12 +44,14 @@ void MainWindow::initWindow(){
     this->setUserInfoCardPixmap(head);
     this->setIsDefaultClosed(false);
     this->addFooterNode("About", nullptr, _aboutKey, 0, ElaIconType::User);
+    this->addFooterNode("LCDClock",nullptr,_lcdNumberKey,0,ElaIconType::AlarmClock);
     this->setNavigationBarDisplayMode(ElaNavigationType::Compact);
     this->setIsFixedSize(true);
 }
 
 void MainWindow::initContent(){
     _aboutPage = new AboutWindow();
+
     _aboutPage->hide();
     connect(this, &ElaWindow::navigationNodeClicked, this, [=](ElaNavigationType::NavigationNodeType nodeType, QString nodeKey) {
         if (_aboutKey == nodeKey)
@@ -57,6 +59,21 @@ void MainWindow::initContent(){
             _aboutPage->setFixedSize(400, 400);
             _aboutPage->moveToCenter();
             _aboutPage->show();
+        }
+    });
+
+    _lcdNumberPage = new ElaLCDNumber();
+    _lcdNumberPage->setIsUseAutoClock(true);
+    _lcdNumberPage->setIsTransparent(false);
+    //_lcdNumber->setAutoClockFormat("hh:mm:ss");
+    _lcdNumberPage->setFixedHeight(100);
+    _lcdNumberPage->hide();
+    connect(this, &ElaWindow::navigationNodeClicked, this, [=](ElaNavigationType::NavigationNodeType nodeType, QString nodeKey) {
+        if (_lcdNumberKey == nodeKey)
+        {
+            _lcdNumberPage->setFixedSize(660, 200);
+            //this->hide();
+            _lcdNumberPage->show();
         }
     });
 
