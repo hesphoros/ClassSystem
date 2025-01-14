@@ -24,18 +24,23 @@ MainWindow::MainWindow(ElaWidget *parent)
     moveToCenter();
 }
 
-MainWindow::~MainWindow() {}
+MainWindow::~MainWindow() {
+    delete _closeDialog;
+    delete _aboutPage;
+    delete _pSystemTray;
+    delete _lcdNumberPage;
+}
 
 void MainWindow::initWindow(){
 
 
-    this->pSystemTray = new QSystemTrayIcon();
-    if(nullptr != pSystemTray){
+    this->_pSystemTray = new QSystemTrayIcon();
+    if(nullptr != _pSystemTray){
         //TODO:
-        pSystemTray->setIcon(QIcon(":/icon.png"));
-        pSystemTray->setVisible(true);
-        pSystemTray->setToolTip("ClassSystem");
-        pSystemTray->show();
+        _pSystemTray->setIcon(QIcon(":/icon.png"));
+        _pSystemTray->setVisible(true);
+        _pSystemTray->setToolTip("ClassSystem");
+        _pSystemTray->show();
     }
     setWindowIcon(QIcon(":/icon.png"));
     this->head = QPixmap(":/headpic.jpg");
@@ -56,24 +61,27 @@ void MainWindow::initContent(){
     connect(this, &ElaWindow::navigationNodeClicked, this, [=](ElaNavigationType::NavigationNodeType nodeType, QString nodeKey) {
         if (_aboutKey == nodeKey)
         {
-            _aboutPage->setFixedSize(400, 400);
-            _aboutPage->moveToCenter();
             _aboutPage->show();
+            _aboutPage->moveToCenter();
+
         }
     });
 
-    _lcdNumberPage = new ElaLCDNumber();
-    _lcdNumberPage->setIsUseAutoClock(true);
-    _lcdNumberPage->setIsTransparent(false);
-    //_lcdNumber->setAutoClockFormat("hh:mm:ss");
-    _lcdNumberPage->setFixedHeight(100);
+    _lcdNumberPage = new LcdNumberWin();
+
+
+
     _lcdNumberPage->hide();
     connect(this, &ElaWindow::navigationNodeClicked, this, [=](ElaNavigationType::NavigationNodeType nodeType, QString nodeKey) {
         if (_lcdNumberKey == nodeKey)
         {
             _lcdNumberPage->setFixedSize(660, 200);
-            //this->hide();
+            this->hide();
+            //this->showMinimized();
             _lcdNumberPage->show();
+            _lcdNumberPage->setIsStayTop(true);
+            _lcdNumberPage->moveToCenter();
+
         }
     });
 

@@ -10,6 +10,7 @@
 #include <QSystemTrayIcon>
 #include <ElaLCDNumber.h>
 #include "aboutwindow.h"
+#include "lcdnumberwin.h"
 
 class ElaContentDialog;
 
@@ -27,11 +28,11 @@ private:
     void initContent();
 private:
     ElaContentDialog* _closeDialog{nullptr};
-    ElaLCDNumber* _lcdNumberPage{nullptr};
+    LcdNumberWin* _lcdNumberPage{nullptr};
     QString _aboutKey{""};
     QString _lcdNumberKey{""};
     QPixmap head;
-    QSystemTrayIcon* pSystemTray;
+    QSystemTrayIcon* _pSystemTray;
     AboutWindow *_aboutPage{nullptr};
 
 };
