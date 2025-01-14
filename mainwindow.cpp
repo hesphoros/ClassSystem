@@ -2,6 +2,7 @@
 #include <QHBoxLayout>
 #include <QIcon>
 #include <QVBoxLayout>
+#include <QString>
 
 MainWindow::MainWindow(ElaWidget *parent)
     :ElaWindow(parent)
@@ -32,7 +33,8 @@ void MainWindow::initWindow(){
     if(nullptr != pSystemTray){
         //TODO:
         pSystemTray->setIcon(QIcon(":/icon.png"));
-        pSystemTray->setToolTip("55555");
+        pSystemTray->setVisible(true);
+        pSystemTray->setToolTip("ClassSystem");
         pSystemTray->show();
     }
     setWindowIcon(QIcon(":/icon.png"));
@@ -57,4 +59,16 @@ void MainWindow::initContent(){
             _aboutPage->show();
         }
     });
+
+    QString testKey;
+    addExpanderNode("TEST1", testKey, ElaIconType::Acorn);
+    addExpanderNode("TEST2", testKey, ElaIconType::Acorn);
+    addExpanderNode("TEST3", testKey, ElaIconType::Acorn);
+    addExpanderNode("TEST4", testKey, ElaIconType::Acorn);
+    addExpanderNode("TEST5", testKey, ElaIconType::Acorn);
+    addExpanderNode("TEST6", testKey, ElaIconType::Acorn);
+    addExpanderNode("TEST7", testKey, ElaIconType::Acorn);
+    addExpanderNode("TEST8", testKey, ElaIconType::Acorn);
+    addExpanderNode("TEST9", testKey, ElaIconType::Acorn);
+
 }
