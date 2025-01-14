@@ -2,6 +2,7 @@
 #include <QHBoxLayout>
 #include <QIcon>
 #include <QVBoxLayout>
+#include <ElaWidget.h>
 #include <QString>
 
 MainWindow::MainWindow(ElaWidget *parent)
@@ -76,14 +77,20 @@ void MainWindow::initContent(){
         if (_lcdNumberKey == nodeKey)
         {
             _lcdNumberPage->setFixedSize(660, 200);
-            this->hide();
-            //this->showMinimized();
             _lcdNumberPage->show();
-            _lcdNumberPage->setIsStayTop(true);
             _lcdNumberPage->moveToCenter();
+            _lcdNumberPage->setIsStayTop(true);
+
 
         }
     });
+
+    connect(_lcdNumberPage,&ElaWidget::closeButtonClicked,this,[=](void){
+        show();
+    });
+
+
+
 
     QString testKey;
     addExpanderNode("TEST1", testKey, ElaIconType::Acorn);

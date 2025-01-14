@@ -2,7 +2,7 @@
 #include <QHBoxLayout>
 
 LcdNumberWin::LcdNumberWin() {
-
+    setWindowTitle("LcdNumberTime");
     _lcdNumber = new ElaLCDNumber(this);
     QHBoxLayout * h_layout = new QHBoxLayout();
     _lcdNumber->setIsUseAutoClock(true);
@@ -12,7 +12,8 @@ LcdNumberWin::LcdNumberWin() {
     h_layout->addWidget(_lcdNumber);
     this->setLayout(h_layout);
     this->setFixedSize(400, 400);
-
+    this->setMaximumSize(400,400);
+    this->setMinimumSize(400,400);
 
 
 }
